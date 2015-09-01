@@ -1,0 +1,55 @@
+'scopeName': 'source.lury'
+'name': 'Lury'
+'fileTypes': [
+  'lr'
+]
+'patterns': [
+  {
+    'match': '\\b(?i:(((\\d+(\\.(?=[^a-zA-Z_])\\d*)?|(?<=[^0-9a-zA-Z_])\\.\\d+)(e[\\-\\+]?\\d+)?))I)'
+    'name': 'constant.numeric.complex.lury'
+  }
+  {
+    'match': '\\b(?i:(\\d+\\.\\d*(e[\\-\\+]?\\d+)?))(?=[^a-zA-Z_])'
+    'name': 'constant.numeric.float.lury'
+  }
+  {
+    'match': '\\b([1-9]+[0-9]*|0)'
+    'name': 'constant.numeric.integer.decimal.lury'
+  }
+  {
+    'match': '\\b(class|def)\\b'
+    'name': 'storage.type.lury'
+  }
+  {
+    'match': '\\b(if|elif|else|while|for|pass|return|break|continue)\\b'
+    'name': 'keyword.control.lury'
+  }
+  {
+    'begin': '\''
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.lury'
+    'end': '\''
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.lury'
+    'name': 'string.quoted.single.lury'
+    'patterns': [
+      {
+        'match': '\\\\\'|\\\\\\\\'
+        'name': 'constant.character.escape.lury'
+      }
+    ]
+  }
+  {
+    'begin': '"'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.lury'
+    'end': '"'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.lury'
+    'name': 'string.quoted.double.interpolated.lury'
+  }
+]

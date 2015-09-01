@@ -1,0 +1,14 @@
+{
+  "name": "language-lury",
+  "version": "0.0.0",
+  "description": "Lury language support in Atom",
+  "homepage": "https://github.com/NKMR6194/language-lury",
+  "repository": "https://github.com/NKMR6194/language-lury",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NKMR6194/language-lury/issues"
+  },
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}
