@@ -51,5 +51,77 @@
       '0':
         'name': 'punctuation.definition.string.end.lury'
     'name': 'string.quoted.double.interpolated.lury'
+    'patterns': [
+      {
+        'include': '#interpolated_lury'
+      }
+    ]
   }
 ]
+'repository':
+  'interpolated_lury':
+    'patterns': [
+      {
+        'begin': '(#\\{)'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.section.embedded.begin.lury'
+          '1':
+            'name': 'source.lury'
+        'contentName': 'source.lury'
+        'end': '(\\})'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.section.embedded.end.lury'
+          '1':
+            'name': 'source.lury'
+        'name': 'meta.embedded.line.lury'
+        'patterns': [
+          {
+            'include': '#nest_curly_and_self'
+          }
+          {
+            'include': '$self'
+          }
+        ]
+      }
+      {
+        'captures':
+          '1':
+            'name': 'punctuation.definition.variable.lury'
+        'match': '(#@)[a-zA-Z_]\\w*'
+        'name': 'variable.other.readwrite.instance.lury'
+      }
+      {
+        'captures':
+          '1':
+            'name': 'punctuation.definition.variable.lury'
+        'match': '(#@@)[a-zA-Z_]\\w*'
+        'name': 'variable.other.readwrite.class.lury'
+      }
+      {
+        'captures':
+          '1':
+            'name': 'punctuation.definition.variable.lury'
+        'match': '(#\\$)[a-zA-Z_]\\w*'
+        'name': 'variable.other.readwrite.global.lury'
+      }
+    ]
+  'nest_curly_and_self':
+    'patterns': [
+      {
+        'begin': '\\{'
+        'captures':
+          '0':
+            'name': 'punctuation.section.scope.lury'
+        'end': '\\}'
+        'patterns': [
+          {
+            'include': '#nest_curly_and_self'
+          }
+        ]
+      }
+      {
+        'include': '$self'
+      }
+    ]
